@@ -18,20 +18,20 @@ Use this skill after a robot URDF exists and the task needs local motion behavio
 
 ## CAD Explorer Handoff
 
-Read `.agents/skills/cad/SKILL.md`, then only load its `references/rendering-and-explorer.md` when a task needs an Explorer URL. If unavailable, use [cad-skill](https://github.com/earthtojake/cad-skill). Do not duplicate Explorer startup or URL syntax in this skill. Link the repo-local `.urdf` when motion artifacts or URDF targets were generated or changed, or when the user asks for browser review. Keep motion-specific Explorer metadata and motion-server behavior here.
+Read `${CLAUDE_PLUGIN_ROOT}/skills/cad/SKILL.md`, then only load its `references/rendering-and-explorer.md` when a task needs an Explorer URL. If unavailable, use [cad-skill](https://github.com/earthtojake/cad-skill). Do not duplicate Explorer startup or URL syntax in this skill. Link the repo-local `.urdf` when motion artifacts or URDF targets were generated or changed, or when the user asks for browser review. Keep motion-specific Explorer metadata and motion-server behavior here.
 
 ## Commands
 
 Run from the robot project repository root. If the current working directory is somewhere else, set `ROBOT_MOTION_REPO_ROOT` to the robot project root.
 
 ```bash
-python .agents/skills/robot-motion/scripts/gen_motion_artifacts/cli.py <robot-urdf-source.py> --summary
+python ${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/scripts/gen_motion_artifacts/cli.py <robot-urdf-source.py> --summary
 ```
 
 ```bash
-.agents/skills/robot-motion/scripts/setup.sh
-.agents/skills/robot-motion/scripts/check-motion-server.sh
-.agents/skills/robot-motion/scripts/run-motion-server.sh
+${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/scripts/setup.sh
+${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/scripts/check-motion-server.sh
+${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/scripts/run-motion-server.sh
 ```
 
 The runtime is host-agnostic but Conda/RoboStack/Jazzy-based. The setup script creates or updates the dedicated conda environment from `environment.yml`, installs `server/` in editable mode, and runs `motion_server --check`. Use any conda-compatible installation available through `ROBOT_MOTION_CONDA_EXE`, `CONDA_EXE`, `PATH`, or a common Miniforge/Miniconda/Anaconda install root. Do not install ROS or MoveIt packages into the repo CAD `.venv`, system Python, or system package managers.
@@ -59,8 +59,8 @@ In sandboxed agent environments, binding or connecting to the local websocket ma
 Run focused tests after changes:
 
 ```bash
-PYTHONPATH=.agents/skills/robot-motion/server ./.venv/bin/python -m unittest discover .agents/skills/robot-motion/server/tests
-PYTHONPATH=.agents/skills/robot-motion/scripts ./.venv/bin/python -m unittest discover .agents/skills/robot-motion/scripts/gen_motion_artifacts/tests
+PYTHONPATH=${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/server ./.venv/bin/python -m unittest discover ${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/server/tests
+PYTHONPATH=${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/scripts ./.venv/bin/python -m unittest discover ${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/scripts/gen_motion_artifacts/tests
 ```
 
 MoveIt adapter tests should stay isolated so they pass without a sourced ROS shell unless a test explicitly requires ROS.

@@ -59,7 +59,7 @@ def gen_motion() -> dict[str, object]:
 Run:
 
 ```bash
-python .agents/skills/robot-motion/scripts/gen_motion_artifacts/cli.py sample_robot.py --summary
+python ${CLAUDE_PLUGIN_ROOT}/skills/robot-motion/scripts/gen_motion_artifacts/cli.py sample_robot.py --summary
 ```
 
 The generator writes all motion-owned outputs under `.<urdf filename>/robot-motion/`:

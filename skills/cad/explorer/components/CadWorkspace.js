@@ -126,9 +126,9 @@ import { copyTextToClipboard } from "../lib/clipboard";
 const DEFAULT_DOCUMENT_TITLE = "CAD Explorer";
 const EMPTY_LIST = Object.freeze([]);
 const CAD_BUILD_COMMANDS = {
-  dxf: "python .agents/skills/cad/scripts/dxf",
+  dxf: "python ${CLAUDE_PLUGIN_ROOT}/skills/cad/scripts/dxf",
   step: "python scripts/step",
-  urdf: "python .agents/skills/urdf/scripts/gen_urdf/cli.py"
+  urdf: "python ${CLAUDE_PLUGIN_ROOT}/skills/urdf/scripts/gen_urdf/cli.py"
 };
 const DEFAULT_URDF_ANIMATION_SETTINGS = Object.freeze({
   introEnabled: false,

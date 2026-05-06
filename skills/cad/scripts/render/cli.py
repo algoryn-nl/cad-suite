@@ -974,7 +974,7 @@ def _write_orbit_gif(frame_paths: Sequence[Path], output_path: Path, *, frame_du
         raise RuntimeError(
             "render orbit requires Pillow for GIF encoding. "
             "Install CAD skill requirements with: "
-            "./.venv/bin/python -m pip install -r .agents/skills/cad/requirements.txt"
+            "./.venv/bin/python -m pip install -r ${CLAUDE_PLUGIN_ROOT}/skills/cad/requirements.txt"
         ) from exc
     if not frame_paths:
         raise RuntimeError("render orbit did not produce any frames")
@@ -1294,7 +1294,7 @@ def _sync_playwright_context() -> Any:
         raise RuntimeError(
             "render view/wireframe requires the Playwright Python package. "
             "Install CAD skill requirements with: "
-            "./.venv/bin/python -m pip install -r .agents/skills/cad/requirements.txt"
+            "./.venv/bin/python -m pip install -r ${CLAUDE_PLUGIN_ROOT}/skills/cad/requirements.txt"
         ) from exc
     return sync_playwright()
 
