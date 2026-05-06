@@ -1,0 +1,17 @@
+{
+  "name": "cad-suite",
+  "owner": {
+    "name": "Algoryn",
+    "url": "https://github.com/algoryn-nl"
+  },
+  "plugins": [
+    {
+      "name": "cad-suite",
+      "source": "./",
+      "description": "STEP-first build123d CAD, URDF robot descriptions, and robot motion (IK + planning) skills with bundled CAD Explorer.",
+      "version": "0.1.0",
+      "category": "engineering",
+      "tags": ["cad", "build123d", "urdf", "robot", "moveit"]
+    }
+  ]
+}

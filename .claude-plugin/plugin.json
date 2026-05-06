@@ -1,0 +1,26 @@
+{
+  "name": "cad-suite",
+  "version": "0.1.0",
+  "description": "STEP-first build123d CAD, URDF robot descriptions, and robot motion (IK + planning) skills with bundled CAD Explorer.",
+  "author": {
+    "name": "Algoryn",
+    "url": "https://github.com/algoryn-nl"
+  },
+  "homepage": "https://github.com/algoryn-nl/cad-suite",
+  "repository": "https://github.com/algoryn-nl/cad-suite",
+  "license": "MIT",
+  "keywords": [
+    "cad",
+    "build123d",
+    "step",
+    "stl",
+    "3mf",
+    "dxf",
+    "urdf",
+    "robot",
+    "moveit",
+    "ros2",
+    "ik",
+    "path-planning"
+  ]
+}
