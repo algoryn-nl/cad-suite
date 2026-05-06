@@ -1,5 +1,7 @@
 {
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
   "name": "cad-suite",
+  "description": "CAD, URDF, and robot-motion skills for Claude Code, with bundled CAD Explorer.",
   "owner": {
     "name": "Algoryn",
     "url": "https://github.com/algoryn-nl"
@@ -7,11 +9,14 @@
   "plugins": [
     {
       "name": "cad-suite",
-      "source": "./",
       "description": "STEP-first build123d CAD, URDF robot descriptions, and robot motion (IK + planning) skills with bundled CAD Explorer.",
-      "version": "0.1.0",
+      "author": {
+        "name": "Algoryn",
+        "url": "https://github.com/algoryn-nl"
+      },
       "category": "engineering",
-      "tags": ["cad", "build123d", "urdf", "robot", "moveit"]
+      "source": "./",
+      "homepage": "https://github.com/algoryn-nl/cad-suite"
     }
   ]
 }
